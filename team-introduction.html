@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DeckMaster Team Introduction — Project Leader and team members for CSC 4370/6370.">
+  <title>Team Introduction | DeckMaster</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .team-intro { max-width: 900px; margin: 0 auto; }
+    .team-intro h1 { margin-bottom: var(--sp-sm); }
+    .team-intro .tagline { font-size: 1.1rem; color: var(--clr-text-muted); margin-bottom: var(--sp-2xl); }
+    .team-intro .folder { font-family: var(--ff-heading); font-size: 0.85rem; color: var(--clr-accent); margin-bottom: var(--sp-3xl); }
+    .member-card { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: var(--sp-xl); margin-bottom: var(--sp-xl); }
+    .member-card h2 { font-size: 1.25rem; margin-bottom: var(--sp-xs); }
+    .member-card .role { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--clr-accent); margin-bottom: var(--sp-md); }
+    .member-card .email { font-size: 0.9rem; color: var(--clr-text-muted); margin-bottom: var(--sp-lg); }
+    .member-card h3 { font-size: 0.9rem; margin: var(--sp-md) 0 var(--sp-sm); color: var(--clr-text-secondary); }
+    .member-card ul { padding-left: var(--sp-lg); margin-bottom: var(--sp-md); }
+    .member-card li { color: var(--clr-text-muted); font-size: 0.95rem; padding: var(--sp-2xs) 0; }
+    .member-card li::marker { color: var(--clr-accent); }
+    .time-table { width: 100%; border-collapse: collapse; margin-top: var(--sp-lg); }
+    .time-table th, .time-table td { padding: var(--sp-sm) var(--sp-md); text-align: left; border-bottom: 1px solid var(--clr-border); }
+    .time-table th { font-family: var(--ff-heading); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--clr-text-muted); }
+    .time-table td { color: var(--clr-text-secondary); font-size: 0.9rem; }
+    .standup-section { background: var(--clr-surface); border: 1px solid var(--clr-border); border-radius: var(--radius-lg); padding: var(--sp-xl); margin-top: var(--sp-2xl); }
+    .standup-section h2 { margin-bottom: var(--sp-md); }
+    .standup-section h3 { font-size: 0.95rem; margin: var(--sp-md) 0 var(--sp-xs); color: var(--clr-accent); }
+    .standup-section p, .standup-section ul { color: var(--clr-text-muted); font-size: 0.95rem; margin-bottom: var(--sp-md); }
+    .standup-section ul { padding-left: var(--sp-lg); }
+    .team-links { display: flex; flex-wrap: wrap; gap: var(--sp-md); margin-top: var(--sp-xl); }
+    .team-links a { color: var(--clr-primary-hover); }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav">
+      <a href="index.html" class="nav-brand" aria-label="DeckMaster Home">
+        <img src="images/logo.png" alt="DeckMaster" class="nav-logo">
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span>
+      </label>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="lobby.html">Lobby</a>
+        <a href="deck.html">Deck Table</a>
+        <a href="strategy.html">Rules &amp; Strategy</a>
+        <a href="team-introduction.html" class="active">Team</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-header" aria-labelledby="team-heading">
+      <div class="container">
+        <h1 id="team-heading">Team <span class="text-accent">Introduction</span></h1>
+        <p>CSC 4370/6370 Project 1 — HTML &amp; CSS</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container team-intro">
+        <h1>DeckMaster</h1>
+        <p class="tagline">A responsive card gaming hub built with HTML5 and CSS3: featuring semantic structure, CSS Grid/Flexbox layouts, animations, and an AI Model Comparison bonus feature.</p>
+        <p class="folder">Project Folder: Rohan_DeckMaster</p>
+
+        <article class="member-card">
+          <h2>Rohan Khandelwal</h2>
+          <p class="role">Project Leader</p>
+          <p class="email">rkhandelwal2@student.gsu.edu</p>
+
+          <h3>Coordination Duties</h3>
+          <ul>
+            <li>Resolve blockers and conflicts</li>
+            <li>Coordinate team communication</li>
+            <li>Maintain Kanban board and track progress</li>
+            <li>Schedule and lead daily standup meetings</li>
+          </ul>
+
+          <h3>Reporting Duties</h3>
+          <ul>
+            <li>Prepare presentation materials</li>
+            <li>Track time allocation per member</li>
+            <li>Document meeting minutes</li>
+            <li>Submit weekly progress reports</li>
+          </ul>
+
+          <h3>Technical Duties</h3>
+          <ul>
+            <li>Conduct code reviews</li>
+            <li>Ensure CSS architecture standards</li>
+            <li>Manage GitHub repository</li>
+            <li>Oversee code quality and consistency</li>
+          </ul>
+
+          <h3>Submission Duties</h3>
+          <ul>
+            <li>Submit YouTube presentation link</li>
+            <li>Organize project folder structure</li>
+            <li>Push final code to GitHub</li>
+            <li>Upload to CODD server</li>
+          </ul>
+
+          <p><strong>Estimated Time:</strong> 18 hours</p>
+        </article>
+
+        <article class="member-card">
+          <h2>Mohit Kokane</h2>
+          <p class="role">Team Member — Layout &amp; Animation Specialist</p>
+          <p class="email">mkokane1@student.gsu.edu</p>
+
+          <h3>Responsibilities</h3>
+          <ul>
+            <li>Design color scheme, typography, and CSS design tokens</li>
+            <li>Implement responsive Grid and Flexbox layouts across all pages</li>
+            <li>Create CSS animations, transitions, and keyframe effects</li>
+            <li>Build semantic HTML structure (header, nav, main, section, footer)</li>
+            <li>Implement Model Comparison flip cards (bonus feature)</li>
+            <li>Test accessibility features, focus states, and responsive breakpoints</li>
+            <li>Cross-browser testing and responsive optimization</li>
+          </ul>
+
+          <p><strong>Estimated Time:</strong> 16 hours</p>
+        </article>
+
+        <h2 style="margin-top: var(--sp-2xl); margin-bottom: var(--sp-md);">Member Time Tracking</h2>
+        <p class="text-muted" style="margin-bottom: var(--sp-md);">Each team member logs hours daily. The project leader consolidates this data for the final report. Hours tracked by project phase.</p>
+        <div style="overflow-x: auto;">
+          <table class="time-table" aria-label="Time tracking by team member">
+            <thead>
+              <tr>
+                <th>Team Member</th>
+                <th>Week 1 (Days 1–5)<br><span style="font-weight:400;text-transform:none;font-size:0.7rem">Proposal &amp; Planning</span></th>
+                <th>Week 2 (Days 6–10)<br><span style="font-weight:400;text-transform:none;font-size:0.7rem">Layout &amp; Structure</span></th>
+                <th>Week 3 (Days 11–14)<br><span style="font-weight:400;text-transform:none;font-size:0.7rem">Motion &amp; Polish</span></th>
+                <th>Final Days (15–17)<br><span style="font-weight:400;text-transform:none;font-size:0.7rem">QA &amp; Presentation</span></th>
+                <th>Total Hours</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Rohan Khandelwal</td>
+                <td>4</td>
+                <td>5</td>
+                <td>5</td>
+                <td>4</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <td>Mohit Kokane</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>4</td>
+                <td>16</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2 style="margin-top: var(--sp-2xl); margin-bottom: var(--sp-md);">Phase Breakdown</h2>
+        <div style="overflow-x: auto;">
+          <table class="time-table" aria-label="Time by project phase">
+            <thead>
+              <tr>
+                <th>Phase</th>
+                <th>Days</th>
+                <th>Activities</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Proposal &amp; Planning</td>
+                <td>1–5</td>
+                <td>Topic selection, wireframes, Kanban setup, proposal submission</td>
+              </tr>
+              <tr>
+                <td>Layout &amp; Structure</td>
+                <td>6–10</td>
+                <td>Semantic HTML, CSS variables, Flexbox/Grid layouts, navigation</td>
+              </tr>
+              <tr>
+                <td>Motion &amp; Polish</td>
+                <td>11–14</td>
+                <td>Animations, transitions, responsive breakpoints, Model Comparison cards</td>
+              </tr>
+              <tr>
+                <td>QA &amp; Presentation</td>
+                <td>15–17</td>
+                <td>Bug fixes, validation, documentation, presentation recording</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="standup-section">
+          <h2>Daily Standup Meetings</h2>
+          <h3>Meeting Schedule</h3>
+          <p>Frequency: Daily | Duration: 10–15 minutes | Format: In-person or Zoom</p>
+
+          <h3>Three Key Questions</h3>
+          <ol style="padding-left: var(--sp-lg); color: var(--clr-text-muted);">
+            <li>What did you complete yesterday?</li>
+            <li>What will you work on today?</li>
+            <li>Any blockers or impediments?</li>
+          </ol>
+
+          <h3>Meeting Output</h3>
+          <ul>
+            <li>Updated Kanban board with task status</li>
+            <li>Documented decisions and blockers</li>
+            <li>Shared progress photos or screenshots</li>
+          </ul>
+
+          <h3>Leader's Role</h3>
+          <p>Facilitate discussion, track blockers, update time logs, and motivate the team.</p>
+
+          <h3>Project Resources</h3>
+          <div class="team-links">
+            <a href="index.html">← Back to DeckMaster</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-brand" aria-hidden="true">♠ DeckMaster</span>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="lobby.html">Lobby</a>
+          <a href="deck.html">Deck Table</a>
+          <a href="strategy.html">Rules &amp; Strategy</a>
+          <a href="team-introduction.html">Team</a>
+        </nav>
+      </div>
+      <p class="footer-copy">&copy; 2026 DeckMaster &mdash; CSC 4370 Project by Rohan Khandelwal &amp; Mohit Kokane</p>
+    </div>
+  </footer>
+</body>
+</html>
