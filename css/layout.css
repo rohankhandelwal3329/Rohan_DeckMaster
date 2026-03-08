@@ -1,0 +1,188 @@
+/* ========================================================
+   DeckMaster — Page Layout Sections
+   Hero, page header, game info bar, footer
+   ======================================================== */
+
+/* ---- Hero Section ---- */
+.hero {
+  position: relative;
+  padding: var(--sp-4xl) 0 var(--sp-3xl);
+  text-align: center;
+  overflow: hidden;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.85)),
+    url('../images/hero-bg.jpg') center / cover no-repeat;
+}
+
+.hero h1 {
+  margin-bottom: var(--sp-md);
+}
+
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--clr-accent), var(--clr-primary-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: var(--clr-text-muted);
+  max-width: 620px;
+  margin: 0 auto var(--sp-xl);
+}
+
+.hero-suits {
+  font-size: 3rem;
+  letter-spacing: 0.5em;
+  color: var(--clr-surface-light);
+  margin-bottom: var(--sp-xl);
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-suits .red {
+  color: var(--clr-danger);
+}
+
+.hero-suits .hero-logo {
+  display: inline-block;
+  height: 30rem;
+  width: auto;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 12px rgba(245, 158, 11, 0.5));
+}
+
+/* ---- Page Header (non-hero pages) ---- */
+.page-header {
+  padding: var(--sp-2xl) 0;
+  text-align: center;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+    #000;
+}
+
+.page-header h1 {
+  margin-bottom: var(--sp-sm);
+}
+
+.page-header p {
+  color: var(--clr-text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* ---- Game Info Bar ---- */
+.game-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-lg);
+  padding: var(--sp-md) var(--sp-lg);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--sp-xl);
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.game-info-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+}
+
+.game-info-item strong {
+  color: var(--clr-text);
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+/* ---- Footer ---- */
+.site-footer {
+  margin-top: var(--sp-3xl);
+  padding: var(--sp-2xl) 0;
+  border-top: 1px solid var(--clr-border);
+  background: var(--clr-bg);
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--sp-md);
+}
+
+.footer-brand {
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  color: var(--clr-accent);
+  font-size: 1.1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--sp-md);
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+}
+
+.footer-links a:hover {
+  color: var(--clr-text);
+}
+
+.footer-copy {
+  width: 100%;
+  text-align: center;
+  margin-top: var(--sp-lg);
+  padding-top: var(--sp-lg);
+  border-top: 1px solid var(--clr-border);
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+}
+
+/* ---- Status Bar (Lobby) ---- */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-xl);
+  padding: var(--sp-lg) var(--sp-xl);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  margin-top: var(--sp-xl);
+}
+
+.status-bar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+}
+
+.status-bar-item strong {
+  color: var(--clr-text);
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--clr-success);
+  display: inline-block;
+}

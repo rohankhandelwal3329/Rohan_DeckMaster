@@ -1,0 +1,271 @@
+/* ========================================================
+   DeckMaster — Reusable Components
+   Cards, buttons, badges, playing cards, divider
+   ======================================================== */
+
+/* ---- Card Component ---- */
+.card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-xl);
+  transition: transform var(--tr-base), box-shadow var(--tr-base), border-color var(--tr-base);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(245, 158, 11, 0.15), 0 0 40px rgba(37, 99, 235, 0.1);
+  border-color: var(--clr-accent);
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--clr-primary-hover);
+  border-radius: var(--radius-md);
+  font-size: 1.5rem;
+  margin-bottom: var(--sp-md);
+  overflow: visible;
+  filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+}
+
+.card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-icon-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card h3 {
+  margin-bottom: var(--sp-xs);
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card p {
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+}
+
+.card-accent .card-icon {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--clr-accent);
+}
+
+.card-accent:hover {
+  box-shadow: var(--shadow-lg), var(--shadow-glow-amber);
+}
+
+.card-centered {
+  text-align: center;
+}
+
+/* ---- Playing Card Component ---- */
+.playing-card {
+  width: 80px;
+  height: 115px;
+  background: #fff;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ff-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--tr-base), box-shadow var(--tr-base);
+  position: relative;
+  cursor: default;
+  flex-shrink: 0;
+}
+
+.playing-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: var(--shadow-lg), 0 0 16px rgba(255, 255, 255, 0.12);
+}
+
+.playing-card .rank {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.playing-card .rank-bottom {
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-size: 0.75rem;
+  line-height: 1;
+  transform: rotate(180deg);
+}
+
+.playing-card .suit-center {
+  font-size: 2rem;
+}
+
+.playing-card.red {
+  color: var(--clr-danger);
+}
+
+.playing-card.black {
+  color: #1a1a2e;
+}
+
+.card-back {
+  background: url('../images/card-back.png') center / cover no-repeat;
+  border: 3px solid var(--clr-accent);
+  color: transparent;
+}
+
+.card-back::after {
+  content: none;
+}
+
+.card-stack {
+  position: relative;
+  width: 80px;
+  height: 115px;
+}
+
+.card-stack .playing-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card-stack .playing-card:nth-child(2) {
+  transform: translate(4px, 4px);
+}
+
+.card-stack .playing-card:nth-child(3) {
+  transform: translate(8px, 8px);
+}
+
+/* ---- Button Component ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-xs);
+  font-family: var(--ff-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: var(--sp-sm) var(--sp-xl);
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    transform var(--tr-fast),
+    background var(--tr-fast),
+    box-shadow var(--tr-fast),
+    color var(--tr-fast);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background: var(--clr-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--clr-primary-hover);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.btn-accent {
+  background: var(--clr-accent);
+  color: var(--clr-bg);
+}
+
+.btn-accent:hover {
+  background: var(--clr-accent-hover);
+  color: var(--clr-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-amber);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--clr-surface-light);
+  color: var(--clr-text);
+}
+
+.btn-outline:hover {
+  border-color: var(--clr-primary);
+  color: var(--clr-primary-hover);
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-gap {
+  margin-left: var(--sp-sm);
+}
+
+/* ---- Badge Component ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2xs);
+  font-family: var(--ff-heading);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: var(--sp-2xs) var(--sp-sm);
+  border-radius: var(--radius-full);
+}
+
+.badge-open {
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--clr-success);
+}
+
+.badge-full {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--clr-danger);
+}
+
+.badge-progress {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--clr-accent);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+/* ---- Divider ---- */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-accent), var(--clr-primary));
+  border: none;
+  border-radius: 2px;
+  margin: var(--sp-lg) auto;
+}

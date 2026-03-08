@@ -1,0 +1,23 @@
+/* ========================================================
+   DeckMaster — Card Gaming Hub
+   Main stylesheet (import hub)
+   Track D | Strategy Table Pack | CSC 4370/6370
+   HTML & CSS Only — No JavaScript
+
+   File structure:
+     base.css        → tokens, reset, typography, accessibility, layout utils
+     components.css  → card, button, badge, playing card, divider
+     navigation.css  → site header, nav bar, mobile hamburger
+     layout.css      → hero, page header, game info bar, footer
+     game.css        → game table, flip cards, lobby rooms, stats, strategy
+     animations.css  → @keyframes + animation utility classes
+     responsive.css  → media queries (tablet, mobile, reduced motion)
+   ======================================================== */
+
+@import url('base.css');
+@import url('components.css');
+@import url('navigation.css');
+@import url('layout.css');
+@import url('game.css');
+@import url('animations.css');
+@import url('responsive.css');

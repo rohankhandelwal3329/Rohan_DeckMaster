@@ -1,0 +1,129 @@
+/* ========================================================
+   DeckMaster — Navigation
+   Site header, nav bar, brand, mobile hamburger toggle
+   ======================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-md) var(--sp-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  font-family: var(--ff-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--clr-accent);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+  letter-spacing: 0.05em;
+}
+
+.nav-brand:hover {
+  color: var(--clr-accent-hover);
+}
+
+.nav-brand .nav-logo {
+  height: 80px;
+  width: auto;
+}
+
+/* Checkbox hack for CSS-only mobile nav */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  width: 32px;
+  height: 24px;
+  position: relative;
+  z-index: 110;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--clr-text);
+  position: absolute;
+  transition: var(--tr-base);
+}
+
+.nav-toggle-label span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  top: -9px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  top: 9px;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span {
+  background: transparent;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span::before {
+  top: 0;
+  transform: rotate(45deg);
+  background: var(--clr-text);
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span::after {
+  top: 0;
+  transform: rotate(-45deg);
+  background: var(--clr-text);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+}
+
+.nav-links a {
+  font-family: var(--ff-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  padding: var(--sp-xs) var(--sp-md);
+  border-radius: var(--radius-sm);
+  transition: color var(--tr-fast), background var(--tr-fast);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--clr-text);
+  background: var(--clr-surface);
+}
+
+.nav-links a.active {
+  color: var(--clr-accent);
+  background: rgba(245, 158, 11, 0.1);
+}
