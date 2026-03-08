@@ -1,0 +1,152 @@
+/* ========================================================
+   DeckMaster — Responsive Breakpoints & Accessibility
+   Tablet (768px), mobile (480px), reduced motion
+   ======================================================== */
+
+/* ---- Tablet & Small Screens ---- */
+@media (max-width: 768px) {
+  .site-header {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--clr-bg);
+  }
+
+  .nav-toggle-label {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--sp-xl);
+    clip-path: inset(0 0 0 100%);
+    visibility: hidden;
+    transition: clip-path var(--tr-slow), visibility 0s linear var(--tr-slow);
+    z-index: 105;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+    transition: clip-path var(--tr-slow), visibility 0s linear 0s;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: var(--sp-md) var(--sp-xl);
+  }
+
+  .hero {
+    padding: var(--sp-3xl) 0 var(--sp-2xl);
+  }
+
+  .hero-suits {
+    font-size: 2rem;
+    letter-spacing: 0.3em;
+  }
+
+  .game-table {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "turn    turn"
+      "draw    discard"
+      "play    play"
+      "hand    hand";
+  }
+
+  .zone-play {
+    min-height: 180px;
+  }
+
+  .zone-hand .playing-card {
+    margin: 0 -4px;
+  }
+
+  .game-info {
+    gap: var(--sp-sm);
+  }
+
+  .flip-card {
+    height: 320px;
+  }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--sp-md);
+  }
+
+  .section {
+    padding: var(--sp-2xl) 0;
+  }
+
+  .game-table {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "turn"
+      "play"
+      "draw"
+      "discard"
+      "hand";
+  }
+
+  .playing-card {
+    width: 62px;
+    height: 90px;
+    font-size: 1rem;
+  }
+
+  .playing-card .suit-center {
+    font-size: 1.5rem;
+  }
+
+  .playing-card .rank,
+  .playing-card .rank-bottom {
+    font-size: 0.65rem;
+  }
+
+  .card-stack {
+    width: 62px;
+    height: 90px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .btn-gap {
+    margin-left: 0;
+    margin-top: var(--sp-sm);
+  }
+
+  .game-info {
+    flex-direction: column;
+    gap: var(--sp-xs);
+  }
+}
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,392 @@
+/* ========================================================
+   DeckMaster — Game-Specific Styles
+   Game table, turn indicator, flip cards, lobby rooms,
+   stats panel, strategy/rules
+   ======================================================== */
+
+/* ---- Game Table Layout ---- */
+.game-table {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr 1fr;
+  grid-template-rows: auto minmax(260px, 1fr) auto;
+  grid-template-areas:
+    "turn  turn    turn"
+    "draw  play    discard"
+    "hand  hand    hand";
+  gap: var(--sp-lg);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.table-zone {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-sm);
+}
+
+.zone-label {
+  font-family: var(--ff-heading);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-text-muted);
+  margin-bottom: var(--sp-xs);
+}
+
+.zone-turn  { grid-area: turn; }
+.zone-draw  { grid-area: draw; }
+
+.zone-play {
+  grid-area: play;
+  background:
+    radial-gradient(ellipse at center, rgba(37, 99, 235, 0.08), transparent 70%),
+    #111;
+  min-height: 260px;
+  gap: var(--sp-md);
+}
+
+.zone-play .play-cards {
+  display: flex;
+  gap: var(--sp-md);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.zone-discard { grid-area: discard; }
+
+.zone-hand {
+  grid-area: hand;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.85);
+  border-color: var(--clr-accent);
+  padding: var(--sp-xl) var(--sp-lg);
+}
+
+.zone-hand .playing-card {
+  margin: 0 -6px;
+  transition: transform var(--tr-base);
+  transform-origin: bottom center;
+}
+
+.zone-hand .playing-card:nth-child(2) { transform: rotate(-8deg); }
+.zone-hand .playing-card:nth-child(3) { transform: rotate(-4deg); }
+.zone-hand .playing-card:nth-child(4) { transform: rotate(0deg); }
+.zone-hand .playing-card:nth-child(5) { transform: rotate(4deg); }
+.zone-hand .playing-card:nth-child(6) { transform: rotate(8deg); }
+
+.zone-hand .playing-card:hover {
+  transform: translateY(-24px) scale(1.12) rotate(0deg);
+  z-index: 10;
+}
+
+/* ---- Turn Indicator ---- */
+.turn-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-md);
+  padding: var(--sp-md) var(--sp-lg);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  font-family: var(--ff-heading);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.turn-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--clr-accent);
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.turn-text {
+  color: var(--clr-accent);
+  font-weight: 600;
+}
+
+.turn-player {
+  color: var(--clr-text);
+  font-weight: 500;
+}
+
+/* ---- Flip Card (Model Comparison — Bonus Feature 6) ---- */
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--sp-xl);
+  perspective: 1200px;
+}
+
+.flip-card {
+  height: 360px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s var(--ease-out);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card:focus-within .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: var(--sp-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid var(--clr-border);
+}
+
+.flip-card-front {
+  background: var(--clr-surface);
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, var(--clr-primary-dark), #1e40af);
+  transform: rotateY(180deg);
+}
+
+.flip-card-front .flip-icon {
+  font-size: 3rem;
+  margin-bottom: var(--sp-md);
+}
+
+.flip-card-front h3 {
+  margin-bottom: var(--sp-xs);
+}
+
+.flip-card-front p {
+  color: var(--clr-text-muted);
+  font-size: 0.9rem;
+}
+
+.flip-card-front .flip-rating {
+  display: flex;
+  gap: var(--sp-2xs);
+  margin-top: var(--sp-md);
+  font-size: 1.2rem;
+  color: var(--clr-accent);
+}
+
+.flip-card-back h3 {
+  margin-bottom: var(--sp-sm);
+  color: #fff;
+}
+
+.flip-card-back p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+}
+
+.flip-card-back .stat-list {
+  margin-top: var(--sp-md);
+  width: 100%;
+}
+
+.flip-card-back .stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-xs) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.flip-card-back .stat-row:last-child {
+  border: none;
+}
+
+.flip-hint {
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  margin-top: var(--sp-sm);
+  font-style: italic;
+}
+
+/* ---- Lobby Room Cards ---- */
+.room-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-xl);
+  transition:
+    transform var(--tr-base),
+    box-shadow var(--tr-base),
+    border-color var(--tr-base);
+}
+
+.room-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-blue);
+  border-color: var(--clr-primary);
+}
+
+.room-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-md);
+}
+
+.room-title {
+  font-family: var(--ff-heading);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.room-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-xs);
+  margin-bottom: var(--sp-lg);
+  color: var(--clr-text-muted);
+  font-size: 0.9rem;
+}
+
+.room-meta span {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-xs);
+}
+
+.room-progress {
+  height: 4px;
+  background: var(--clr-surface-light);
+  border-radius: 2px;
+  margin-bottom: var(--sp-md);
+  overflow: hidden;
+}
+
+.room-progress-bar {
+  height: 100%;
+  background: var(--clr-primary);
+  border-radius: 2px;
+  transition: width var(--tr-slow);
+}
+
+.room-progress-full {
+  background: var(--clr-danger);
+}
+
+/* ---- Stats Panel ---- */
+.stats-panel {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-xl);
+}
+
+.stats-panel h2 {
+  font-size: 1.3rem;
+  margin-bottom: var(--sp-lg);
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-sm) 0;
+  border-bottom: 1px solid var(--clr-border);
+  font-size: 0.95rem;
+}
+
+.stat-item:last-child {
+  border: none;
+}
+
+.stat-value {
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  color: var(--clr-accent);
+}
+
+/* ---- Strategy / Rules Content ---- */
+.rules-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rules-content h3 {
+  margin: var(--sp-xl) 0 var(--sp-sm);
+  color: var(--clr-accent);
+}
+
+.rules-content ul {
+  padding-left: var(--sp-lg);
+  margin-bottom: var(--sp-md);
+}
+
+.rules-content li {
+  position: relative;
+  padding: var(--sp-2xs) 0;
+  color: var(--clr-text-secondary);
+}
+
+.rules-content li::before {
+  content: '♦';
+  color: var(--clr-accent);
+  margin-right: var(--sp-xs);
+}
+
+.strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-lg);
+}
+
+.strategy-card {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-xl);
+  text-align: center;
+  transition: transform var(--tr-base), box-shadow var(--tr-base);
+}
+
+.strategy-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md), var(--shadow-glow-amber);
+}
+
+.strategy-card .strategy-icon {
+  font-size: 2rem;
+  margin-bottom: var(--sp-sm);
+}
+
+.strategy-card h4 {
+  margin-bottom: var(--sp-xs);
+  font-size: 0.95rem;
+}
+
+.strategy-card p {
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 0;
+}
