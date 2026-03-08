@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DeckMaster — A responsive card gaming hub built with HTML5 and CSS3. Portfolio project for CSC 4370.">
+  <meta property="og:title" content="DeckMaster | Card Gaming Hub">
+  <meta property="og:description" content="Your ultimate card gaming destination. Choose a table, build your deck, and master the strategy.">
+  <meta property="og:image" content="images/logo.png">
+  <meta property="og:type" content="website">
+  <title>DeckMaster | Card Gaming Hub</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="nav">
+      <a href="index.html" class="nav-brand" aria-label="DeckMaster Home">
+        <img src="images/logo.png" alt="DeckMaster" class="nav-logo">
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
+        <span></span>
+      </label>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="lobby.html">Lobby</a>
+        <a href="deck.html">Deck Table</a>
+        <a href="strategy.html">Rules &amp; Strategy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-suits" aria-hidden="true">
+          ♠ <span class="red">♥</span> <img src="images/logo.png" alt="" class="hero-logo"> <span class="red">♦</span> ♣
+        </div>
+        <h1 id="hero-heading">Welcome to <span class="highlight">DeckMaster</span></h1>
+        <p class="hero-subtitle">
+          Your ultimate card gaming destination. Choose a table, build your deck, and master the strategy behind every hand.
+        </p>
+        <a href="lobby.html" class="btn btn-accent">Enter the Lobby</a>
+      </div>
+    </section>
+
+    <!-- Featured Game Cards -->
+    <section class="section" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="featured-heading">Featured <span class="text-accent">Game Modes</span></h2>
+          <p>Choose your arena and test your skills</p>
+        </div>
+        <div class="grid grid-2x2">
+          <article class="card animate-fade-in">
+            <div class="card-icon" aria-hidden="true"><img src="images/icon-quickdraw.png" alt=""></div>
+            <h3>Quick Draw</h3>
+            <p>Fast-paced rounds with a 5-card hand. Perfect for quick sessions and sharpening your reflexes.</p>
+          </article>
+          <article class="card animate-fade-in">
+            <div class="card-icon" aria-hidden="true"><img src="images/icon-royalsiege.png" alt=""></div>
+            <h3>Royal Siege</h3>
+            <p>Strategic gameplay with full decks. Plan your moves and outmaneuver opponents across multiple rounds.</p>
+          </article>
+          <article class="card animate-fade-in">
+            <div class="card-icon" aria-hidden="true"><img src="images/icon-blitz.png" alt=""></div>
+            <h3>Blitz Battle</h3>
+            <p>High-energy elimination mode. Last player standing wins. Aggressive plays rewarded.</p>
+          </article>
+          <article class="card animate-fade-in">
+            <div class="card-icon" aria-hidden="true"><img src="images/icon-wildcard.png" alt=""></div>
+            <h3>Wild Card</h3>
+            <p>Unpredictable ruleset each round. Adapt your strategy on the fly and embrace the chaos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section section-alt">
+      <div class="container text-center">
+        <h2>Ready to <span class="text-accent">Play?</span></h2>
+        <p style="max-width:500px;margin:var(--sp-sm) auto var(--sp-xl)">
+          Step into the lobby, choose your game, and prove you're the ultimate DeckMaster.
+        </p>
+        <a href="lobby.html" class="btn btn-primary">Enter the Lobby</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <span class="footer-brand" aria-hidden="true">♠ DeckMaster</span>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="lobby.html">Lobby</a>
+          <a href="deck.html">Deck Table</a>
+          <a href="strategy.html">Rules &amp; Strategy</a>
+          <a href="team-introduction.html">Team</a>
+        </nav>
+      </div>
+      <p class="footer-copy">&copy; 2026 DeckMaster &mdash; Made with ❤️ by Rohan Khandelwal &amp; Mohit Kokane</p>
+    </div>
+  </footer>
+</body>
+</html>
